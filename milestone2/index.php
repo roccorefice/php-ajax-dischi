@@ -1,7 +1,3 @@
-<!-- inlcude che punta al $db_dischi -->
-<?php 
-    include __DIR__ . '/src/partials/templates/db.php'
-?>
 
 <!-- HTML -->
 <!DOCTYPE html>
@@ -14,35 +10,39 @@
     <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 <body>
-    <!-- header -->
-    <header class="navbar">
-        <div class="container">
-            <img src="./src/img/logo.png" alt="">
-        </div>
-    </header>
-    <!-- //header -->
+    <div id="app">
 
-    <!-- main -->
-    <main id="site_main">
-        <div class="container d_flex">
-            <!-- foreach che cicla all'interno del $db_dischi affinchè mi mostri il link delle img, titolo, autore e anno -->
-            <?php 
-                foreach ($db_dischi as $disco) {?>
-                    <div class="card ">
-                    <img src="<?php echo $disco['poster']; ?>" alt="">
-                    <h5><?php echo $disco['title']; ?></h5>
-                    <p><?php echo $disco['author']; ?></p> 
-                    <p><?php echo $disco['year']; ?></p>            
-                    </div>
-            <?php
-            }
-            ?>
-        </div>
-    </main>
-    <!-- /main -->
+        <!-- header -->
+        <header class="navbar">
+            <div class="container">
+                <img src="./src/img/logo.png" alt="">
+            </div>
+        </header>
+        <!-- //header -->
 
+        <!-- main -->
+        <main id="site_main">
+            <div class="container d_flex">
+            <!-- v-for che cicla nell'array della lista degli album situata nel data del .json -->
+                <div v-for="album in list_albums" class="card ">
+                <img :src="album.poster" alt="">
+                <h5>{{album.title}}</h5>
+                <p>{{album.author}}</p> 
+                <p>{{album.year}}</p>            
+                </div>
+                
+            </div>
+        </main>
+        <!-- /main -->
+    </div>
+
+
+    <!-- axios -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <!-- javascript -->
-    <script src="./dist/js/main.js"></script>
+    <script src="src/js/main.js"></script>
 </body>
 </html>
 <!-- //HTML -->

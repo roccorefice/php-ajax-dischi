@@ -71,5 +71,9 @@
         "year" => "1987"
     ]
 ];
+
+//converto il db da .php in .json
+header('Content-Type: application/json');
+echo json_encode($db_dischi);
     
 ?>
