@@ -3,3 +3,47 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+.d_flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar {
+  background-color: black;
+  height: 50px;
+}
+
+.navbar img {
+  height: 30px;
+  margin-top: 10px;
+}
+
+#site_main {
+  background-color: grey;
+}
+#site_main .card {
+  color: white;
+  background-color: black;
+  width: 150px;
+  height: 250px;
+  padding: 10px;
+  margin: 20px;
+  text-align: center;
+}
+#site_main .card img {
+  height: 120px;
+}
+#site_main .card h5 {
+  padding: 5px;
+}
+#site_main .card p {
+  padding: 3px;
+  color: grey;
+  font-size: 12px;
+}

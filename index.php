@@ -1,5 +1,5 @@
 <?php 
-    include __DIR__ . '/../partials/db.php'
+    include __DIR__ . '/src/partials/db.php'
 ?>
 
 <!DOCTYPE html>
@@ -11,7 +11,28 @@
     <link rel="stylesheet" href="./dist/css/style.css">
 </head>
 <body>
-    
+
+    <header class="navbar">
+        <div class="container">
+        <img src="./src/img/logo.png" alt="">
+        </div>
+    </header>
+    <main id="site_main">
+    <div class="container d_flex">
+        
+    <?php 
+    foreach ($db_dischi as $disco) {?>
+        <div class="card ">
+        <img src="<?php echo $disco['poster']; ?>" alt="">
+        <h5><?php echo $disco['title']; ?></h5>
+        <p><?php echo $disco['author']; ?></p> 
+        <p><?php echo $disco['year']; ?></p>            
+        </div>
+    <?php
+    }
+    ?>
+    </div>
+    </main>
 <script src="./dist/js/main.js"></script>
 </body>
 </html>
