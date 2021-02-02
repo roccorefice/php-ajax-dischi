@@ -1,3 +1,5 @@
-* {
-    background-color: red;
-}
+@import './src/partials/_variables';
+@import './src/partials/_common';
+@import './src/partials/_navbar';
+@import './src/partials/_main';
+
